@@ -1,6 +1,6 @@
 const express = require('express')
 const path =require('path')
-const apiroute=require('./routes/api').route
+
 
 
 const app=express()
@@ -10,7 +10,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use('/',express.static(path.join(__dirname,'public')))
 
-app.use('/api',apiroute)
+app.use('/api',require('./routes/api').route)
 
 
 

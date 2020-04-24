@@ -30,9 +30,10 @@ route.post("/", (req, res) => {
     .then((product) => {
       res.status(201).send(product);
     })
-    .catch(() => {
+    .catch((error) => {
       res.status(501).send({
-        error: "product could not be added",
+        
+        error: "product could not be added"
       });
     });
 });

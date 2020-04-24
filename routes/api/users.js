@@ -30,7 +30,7 @@ route.post('/',(req,res)=>{
         res.status(201).send(user)
 
     })
-    .catch((err)=>{
+    .catch((error)=>{
         res.status(501).send({
           error: "Could not add new user"
         });

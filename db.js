@@ -17,7 +17,7 @@ const db = new Sequelize('shopdb','shopper','shoppass',{
 const User =db.define('users',{
     id:{
         type:Sequelize.INTEGER,
-        autoIncremnet:true,
+        autoIncrement:true,
         primaryKey:true
     },
     name:{
@@ -30,14 +30,17 @@ const User =db.define('users',{
 const Product =db.define('products',{
     id:{
         type:Sequelize.INTEGER,
-        autoIncremnet:true,
+        autoIncrement:true,
         primaryKey:true
     },
     name:{
         type:Sequelize.STRING,
         allowNull:false
     },
-    manufacturer:Sequelize.STRING,
+    manufacturer:{
+        type:Sequelize.STRING,
+        allowNull:false
+    },
     price:{
         type:Sequelize.FLOAT,
         defalutValue:0.0,
