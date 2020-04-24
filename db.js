@@ -43,7 +43,7 @@ const Product =db.define('products',{
     },
     price:{
         type:Sequelize.FLOAT,
-        defalutValue:0.0,
+        defaultValue:0.0,
         allowNull:false
     }
 })
