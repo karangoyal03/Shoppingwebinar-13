@@ -14,39 +14,45 @@ const db = new Sequelize('shopdb','shopper','shoppass',{
 //with db as class like structure we are creating instance of a class 
 // these will be are different models or tables which we are defining with our database
 
-const User =db.define('users',{
-    id:{
-        type:Sequelize.INTEGER,
-        autoIncrement:true,
-        primaryKey:true
-    },
-    name:{
-        type:Sequelize.STRING,
-        allowNull:false
-    }
-})
+const User = db.define("users", {
+  id: {
+    type: Sequelize.INTEGER,
+    primaryKey: true,
+    autoIncrement: true,
+    allowNull: false
+  },
+  name: {
+    type: Sequelize.STRING,
+    allowNull: false,
+  },
+  createdAt: Sequelize.DATE,
+  updatedAt: Sequelize.DATE,
+});
 
 
-const Product =db.define('products',{
-    id:{
-        type:Sequelize.INTEGER,
-        autoIncrement:true,
-        primaryKey:true
-    },
-    name:{
-        type:Sequelize.STRING,
-        allowNull:false
-    },
-    manufacturer:{
-        type:Sequelize.STRING,
-        allowNull:false
-    },
-    price:{
-        type:Sequelize.FLOAT,
-        defaultValue:0.0,
-        allowNull:false
-    }
-})
+const Product = db.define("products", {
+  id: {
+    type: Sequelize.INTEGER,
+    primaryKey: true,
+    autoIncrement: true,
+    allowNull: false
+  },
+  name: {
+    type: Sequelize.STRING,
+    allowNull: false,
+  },
+  manufacturer: {
+    type: Sequelize.STRING,
+    allowNull: false,
+  },
+  price: {
+    type: Sequelize.FLOAT,
+    defaultValue: 0.0,
+    allowNull: false,
+  },
+  createdAt: Sequelize.DATE,
+  updatedAt: Sequelize.DATE,
+});
 
 
 db.sync()
@@ -54,6 +60,7 @@ db.sync()
     console.log('database craeted successfully')
 })
 .catch((err)=>{
+    console.log(err)
     console.error('error creating database')
 })
 

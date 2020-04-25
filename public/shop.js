@@ -16,7 +16,7 @@ function addproducts(name,manufacturer,price,done){
 function createproduct(product) {
   return $(`
      <div class="row">
-        <div class="col-4 card mx-2 p-1">
+        <div class="col-8 card mx-2 p-1" style="width:400px;">
           <h4 class="product-name">${product.name}</h4>
           <div class="product-manufaturer">
             ${product.manufacturer}

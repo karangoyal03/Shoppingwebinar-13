@@ -4,7 +4,7 @@ $(function(){
     let ProductPrice = $("#ProductPrice");
 
     $('#add').click(()=>{
-        addproduct(
+        addproducts(
             ProductName.val(),
             ProductManufacturer.val(),
             ProductPrice.val()
